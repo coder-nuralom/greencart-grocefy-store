@@ -13,9 +13,7 @@ const ProductCard = ({ product }) => {
       <div className="group cursor-pointer flex items-center justify-center px-2">
         <img
           onClick={() =>
-            navigate(
-              `/products/${product.category.toLowerCase()}/${product._id}`,
-            )
+            navigate(`/products/${product.category.toLowerCase()}/${product._id}`)
           }
           className="group-hover:scale-105 transition max-w-26 md:max-w-36"
           src={product.image[0]}
@@ -26,9 +24,7 @@ const ProductCard = ({ product }) => {
         <p>{product.category}</p>
         <p
           onClick={() =>
-            navigate(
-              `/products/${product.category.toLowerCase()}/${product._id}`,
-            )
+            navigate(`/products/${product.category.toLowerCase()}/${product._id}`)
           }
           className="text-gray-700 font-medium text-lg truncate w-full cursor-pointer"
         >
@@ -65,18 +61,14 @@ const ProductCard = ({ product }) => {
             ) : (
               <div className="flex items-center justify-center gap-2 md:w-20 w-16 h-[34px] bg-[var(--color-primary)]/25 rounded select-none">
                 <button
-                  onClick={() =>
-                    updateQuantity(product._id, existingItem.quantity - 1)
-                  }
+                  onClick={() => updateQuantity(product._id, existingItem.quantity - 1)}
                   className="cursor-pointer text-md px-2 h-full"
                 >
                   <Minus size={11} />
                 </button>
                 <span className="w-5 text-center">{existingItem.quantity}</span>
                 <button
-                  onClick={() =>
-                    updateQuantity(product._id, existingItem.quantity + 1)
-                  }
+                  onClick={() => updateQuantity(product._id, existingItem.quantity + 1)}
                   className="cursor-pointer text-md px-2 h-full"
                 >
                   <Plus size={11} />
